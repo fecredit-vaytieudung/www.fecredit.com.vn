@@ -1,0 +1,388 @@
+/* ==========================================
+   Custom Home Page Styles
+   Vay Tiêu Dùng Tín Chấp
+   ========================================== */
+
+/* ===== HERO SECTION BUTTONS ===== */
+.hero-primary-cta {
+    min-height: 48px;
+    padding: 12px 32px;
+    background-color: var(--fecredit-secondary);
+    color: var(--fecredit-primary-dark);
+    border: none;
+    border-radius: var(--fecredit-radius-lg);
+    font-weight: 700;
+    font-size: 16px;
+    text-decoration: none;
+    transition: var(--fecredit-transition-base);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.hero-primary-cta:hover {
+    background-color: #DFFFCA;
+    color: var(--fecredit-primary-dark);
+}
+
+.hero-secondary-cta {
+    min-height: 48px;
+    padding: 12px 32px;
+    background-color: transparent;
+    color: var(--fecredit-white);
+    border: 2px solid var(--fecredit-white);
+    border-radius: var(--fecredit-radius-lg);
+    font-weight: 700;
+    font-size: 16px;
+    text-decoration: none;
+    transition: var(--fecredit-transition-base);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.hero-secondary-cta:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--fecredit-white);
+}
+
+/* ===== QUICK ACTION CARDS ===== */
+.fec-quick-card {
+    background: var(--fecredit-white);
+    border-radius: var(--fecredit-radius-lg);
+    padding: 20px;
+    box-shadow: var(--fecredit-shadow-sm);
+    transition: var(--fecredit-transition-base);
+    border: 2px solid transparent;
+    text-decoration: none;
+    display: block;
+    height: 100%;
+}
+
+.fec-quick-card:hover {
+    border-color: var(--fecredit-primary);
+    box-shadow: var(--fecredit-shadow-md);
+    transform: translateY(-4px);
+}
+
+/* ===== SCOPED RESPONSIVE FIXES ===== */
+/* Wrap custom content in .fec-custom-page to avoid affecting FE Credit components */
+
+.fec-custom-page {
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+}
+
+.fec-custom-page section {
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+}
+
+.fec-custom-page .component-inner {
+    width: 100%;
+    max-width: 100%;
+}
+
+/* ===== HERO SECTION RESPONSIVE ===== */
+@media (max-width: 767px) {
+    .fec-hero-section {
+        padding: 32px 0;
+    }
+    
+    .fec-hero-section h1 {
+        font-size: 28px;
+    }
+    
+    .fec-hero-section p {
+        font-size: 16px;
+    }
+    
+    .hero-primary-cta,
+    .hero-secondary-cta {
+        font-size: 14px;
+        padding: 10px 24px;
+        min-height: 44px;
+    }
+}
+
+/* ===== FLOATING BUTTONS POSITIONING ===== */
+#chat_calculator_button {
+    position: fixed;
+    bottom: 140px;
+    right: 15px;
+    z-index: 9998;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #9FE870 0%, #00994F 100%);
+    box-shadow: 0 4px 12px rgba(0, 153, 79, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    animation: blink 2s ease-in-out infinite;
+}
+
+#chat_calculator_button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 16px rgba(0, 153, 79, 0.4);
+}
+
+#chat_calculator_button svg {
+    color: white;
+}
+
+#chat_calculator_tooltip {
+    position: fixed;
+    bottom: 145px;
+    right: 80px;
+    z-index: 9997;
+    background-color: #00994F;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    white-space: nowrap;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+#chat_calculator_button:hover + #chat_calculator_tooltip {
+    opacity: 1;
+    visibility: visible;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+}
+
+/* Adjust button positions on mobile and small screens */
+@media screen and (max-width: 767px) {
+    #chat_calculator_button {
+        bottom: 80px;
+        width: 48px;
+        height: 48px;
+    }
+    
+    #chat_calculator_tooltip {
+        bottom: 85px;
+        right: 70px;
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+    
+    #widget-support {
+        bottom: 20px;
+    }
+}
+
+/* Handle very small screens or short viewports */
+@media screen and (max-height: 600px) {
+    #chat_calculator_button {
+        bottom: 100px;
+    }
+    
+    #widget-support {
+        bottom: 40px;
+    }
+}
+
+/* ===== GLOBAL RESPONSIVE FIXES (SCOPED) ===== */
+/* These apply only within .fec-custom-page wrapper */
+
+.fec-custom-page * {
+    box-sizing: border-box;
+}
+
+.fec-custom-page .container {
+    max-width: 100%;
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+@media (max-width: 575px) {
+    .fec-custom-page .container {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+}
+
+.fec-custom-page img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+/* ===== POPUP MODAL RESPONSIVE ===== */
+#dopContainer {
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#dopContainer > div {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+    top: 0;
+}
+
+@media screen and (min-width:992px) {
+    #dopContainer .modal-title { font-size: 16px; }
+    #dopContainer .modal-description { font-size: 15px; }
+    #dopContainer .top-wrapper { padding: 24px; gap: 20px; }
+    #dopContainer .bottom-wrapper { padding: 12px 24px; }
+    #dopContainer button { font-size: 16px; }
+    #dopContainer #allowBtn:hover { border-color: #015C2E; }
+    #dopContainer #cancelBtn:hover { background-color: #DFFFCA; }
+}
+
+@media screen and (max-width: 991px) {
+    #dopContainer {
+        padding: 10px;
+    }
+    
+    #dopContainer > div {
+        max-width: 100%;
+        margin: 0 10px;
+        min-height: auto;
+    }
+    
+    #dopContainer .top-wrapper {
+        padding: 16px;
+        gap: 12px;
+        flex-direction: row;
+    }
+    
+    #dopContainer #imgIcon {
+        width: 48px;
+        height: 48px;
+        flex-shrink: 0;
+    }
+    
+    #dopContainer .modal-title {
+        font-size: 13px;
+        line-height: 1.3;
+    }
+    
+    #dopContainer .modal-description {
+        font-size: 12px;
+        line-height: 1.4;
+    }
+    
+    #dopContainer .bottom-wrapper {
+        padding: 12px 16px;
+        flex-direction: column-reverse;
+        gap: 8px;
+    }
+    
+    #dopContainer button {
+        width: 100%;
+        min-width: unset;
+        padding: 10px 12px;
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #dopContainer .top-wrapper {
+        padding: 12px;
+        gap: 10px;
+    }
+    
+    #dopContainer #imgIcon {
+        width: 40px;
+        height: 40px;
+    }
+    
+    #dopContainer .modal-title {
+        font-size: 12px;
+    }
+    
+    #dopContainer .modal-description {
+        font-size: 11px;
+    }
+}
+
+/* ===== COMPARE CARD MODAL RESPONSIVE ===== */
+#compare-card-modal {
+    width: 100%;
+    max-width: 100vw;
+    padding: 12px 16px;
+}
+
+.compare-wrapper {
+    width: 100%;
+    max-width: 100%;
+}
+
+@media screen and (max-width: 991px) {
+    #compare-card-modal {
+        padding: 12px;
+    }
+    
+    .compare-wrapper {
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .compare-list {
+        flex-wrap: wrap;
+        gap: 8px;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .compare-btn-link,
+    .stop-btn {
+        font-size: 14px;
+        padding: 10px 16px;
+        white-space: nowrap;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    #compare-card-modal {
+        padding: 10px;
+    }
+    
+    .compare-title p {
+        font-size: 14px;
+    }
+    
+    .compare-title .text-gray-8 {
+        font-size: 18px;
+    }
+}
+
+/* ===== WIDGET SUPPORT (LOCATION BUTTON) ===== */
+#widget-support {
+    position: fixed;
+    bottom: 80px;
+    right: 15px;
+    z-index: 9999;
+}
+
+@media screen and (max-width: 767px) {
+    .location_button_tooltip {
+        font-size: 12px;
+        padding: 6px 10px;
+    }
+    
+    #location_button {
+        width: 44px;
+        height: 44px;
+    }
+}
